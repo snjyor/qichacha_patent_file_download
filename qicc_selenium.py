@@ -17,7 +17,7 @@ class QiCC(object):
     def __init__(self, config):
         self.config = config
 
-    def login(self, url):
+    def login(self, url, pwlogin=False):
 
         LOGIN_XPATH = "/html/body/div[1]/div[1]/div/div/nav[2]/ul/li[last()]/a/span"
 
@@ -39,16 +39,12 @@ class QiCC(object):
         # 点击登录按钮
         driver.find_element_by_xpath(LOGIN_XPATH).click()
 
-        # 密码登录或者验证码登录/pw or captcha
-        # login_type = input("input login type(pw or captcha): ")
-        login_type = "captcha"
-        time.sleep(10)
-        if login_type == "pw":
+        # 密码登录或者验证码登录
+        time.sleep(2)
+        if pwlogin:
             self.login_with_password(driver)
-        elif login_type == "captcha":
-            self.login_with_captcha(driver)
         else:
-            raise Exception("没有这种登录方式")
+            self.login_with_captcha(driver)
         
         print("login in success")
 
