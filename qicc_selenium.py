@@ -31,7 +31,7 @@ class QiCC(object):
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
 
-        driver = webdriver.Chrome(chrome_options=chrome_options)
+        driver = webdriver.Chrome(chrome_options=chrome_options, executable_path="chromedriver.exe")
 
         # 访问链接
         driver.get(url)
@@ -70,9 +70,9 @@ class QiCC(object):
         driver.find_element_by_xpath("/html/body/div[3]/div/div/div/div[2]/div[2]/form/div[3]/a").click()  # 点击发送验证码
         time.sleep(20) # 输入验证码等待时长
         try:
-            login_button_seletor = driver.find_element_by_xpath("/html/body/div[3]/div/div/div/div[2]/div[2]/form/div[4]/button")
+            login_button_selector = driver.find_element_by_xpath("/html/body/div[3]/div/div/div/div[2]/div[2]/form/div[4]/button")
             # 点击登录
-            login_button_seletor.click()
+            login_button_selector.click()
         except Exception as e:
             pass
 
