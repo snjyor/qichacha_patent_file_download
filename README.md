@@ -1,7 +1,11 @@
 # qichacha_patent_file_download
  企查查爬虫/企查查专利文件下载工具
+### 使用方式
+```
+python qicc_selenium.py
+```
 
-使用说明：
+### 使用说明：
 1. 确保已安装必要的库
 2. 确保chromadriver.exe与自己的谷歌浏览器版本是否对应，本仓库的chromedriver对应98版本的谷歌浏览器
 3. 要下载第2页往后的专利需要登录账号，所以需要在config变量中把账号和密码修改为你自己的，否则只能下载第一页的专利
