@@ -1,0 +1,5 @@
+# python 虚拟环境
+.venv
+
+# 下载到的数据
+patent_pdf
